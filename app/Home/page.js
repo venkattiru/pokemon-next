@@ -6,7 +6,7 @@ export default async function HomePage(){
     const pokemonList = await getPokemons();
     console.log('pokemon', pokemonList.results);
     return(
-        <div>
+        <div className="flex flex-wrap justify-center">
         <PokemonList  list={pokemonList.results}/>
         </div>
     )
