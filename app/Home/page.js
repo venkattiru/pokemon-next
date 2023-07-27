@@ -1,13 +1,15 @@
-import { getPokemons } from "@/utils/apis";
+
 import PokemonList from "./PokemonList";
+import { Suspense } from "react";
 
-export default async function HomePage(){
+export default function HomePage(){
 
-    const pokemonList = await getPokemons();
-    console.log('pokemon', pokemonList.results);
+    
     return(
-        <div className="flex flex-wrap justify-center">
-        <PokemonList  list={pokemonList.results}/>
-        </div>
+        
+            <Suspense fallback={<p>Loading</p>}>
+        <PokemonList />
+        </Suspense>
+        
     )
 }

@@ -1,7 +1,10 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import {Cinzel} from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const cinzel =  Cinzel({
+  weight: '500',
+  subsets: ['latin']
+})
 
 export const metadata = {
   title: 'Pokemon Nxt',
@@ -11,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={cinzel.className}>{children}</body>
     </html>
   )
 }
