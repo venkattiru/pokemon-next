@@ -2,28 +2,33 @@
 
 import { getPokemons } from "@/utils/apis";
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 const PokemonList = () => {
 
     const [pokemonList, setPokemonList] = useState([]);
-    const [offset, setOffset] = useState(0);
     
+    const handleScroll = () => {
+        if(window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight) {
+            fetchData(sessionStorage.getItem('url'))
+        }   
+    }
+
     useEffect(() => {
-        fetchData()
+        fetchData('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
         
-        window.onscroll= (ev) => {
-            fetchData(offset)
-        }
+        window.addEventListener('scroll', handleScroll)
+
+        return () => window.removeEventListener('scroll', handleScroll)
     },[])
 
     
-    const fetchData = async() => {
-        const data = await getPokemons(offset);
+    const fetchData = async(link) => {
+        const data = await getPokemons(link);
         setPokemonList((prev) => {
             return [...prev, ...data?.results]
         });
-        setOffset((prev)=> prev+20);
+        sessionStorage.setItem('url', data?.next);
     }
     
     return (

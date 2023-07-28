@@ -1,4 +1,4 @@
-export async function getPokemons (offset=0) {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`);
+export async function getPokemons (url) {
+    const response = await fetch(url);
     return response.json()
 }
