@@ -2,7 +2,7 @@
 
 import { getPokemons } from "@/utils/apis";
 import Image from "next/image"
-import { useCallback, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 
 const PokemonList = () => {

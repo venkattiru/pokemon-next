@@ -7,8 +7,7 @@ export default function Home() {
       <Image src='/pokeball-md.png' alt="pokemon logo" width={300} height={500}/>
       <button>SignIn</button>
       <button>Signup</button>
-      
-        <Link href='/Home'>
+        <Link href='/pokemon/home'>
         <button>
           Home
           </button>
