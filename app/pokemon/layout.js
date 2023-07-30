@@ -20,7 +20,8 @@ export default function PokeLayout({children}){
     return( 
         <ThemeContext.Provider value ={theme}> 
         {children}
-            <aside className="fixed right-0 bg-[#cac5d6] p-1 top-8 dark:bg-yellow-900 rounded-md flex md:flex-col xs:bottom-2 md:bottom-auto flex-row">
+        <div className="flex justify-center">
+            <aside className="fixed md:right-0 bg-[#cac5d6] p-1 md:top-8 dark:bg-yellow-900 rounded-md flex md:flex-col bottom-2 md:bottom-auto flex-row justify-evenly">
                 <div className="p-2 hover:my-2 hover:scale-125" title="Home">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 24" stroke-width="1.5" stroke="currentColor" className="dark:text-gray-200 w-8 h-8">
   <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
@@ -36,7 +37,7 @@ export default function PokeLayout({children}){
             <div
           aria-label="Toggle Dark Mode"
           type="button"
-          className="p-2 h-12 w-12 absolute left-2/4 lg:transform-none md:relative md:left-0 border-0 hover:my-2 hover:scale-125"
+          className="p-2 h-10 w-10 lg:transform-none md:relative md:left-0 border-0 hover:my-2 hover:scale-125"
           onClick={handleTheme}
         >
             <svg
@@ -69,7 +70,7 @@ export default function PokeLayout({children}){
         
         </div>
         </aside>
-        
+        </div>
         </ThemeContext.Provider> 
         
     )
