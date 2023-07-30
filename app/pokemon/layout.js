@@ -3,9 +3,10 @@ import { detecDevice } from "@/utils/utility";
 import { ThemeContext } from "../themeproviders";
 import {  useState } from "react";
 
+
 export default function PokeLayout({children}){ 
     const [theme, setTheme] = useState('light');
-
+  
 
     const handleTheme = () => {
         if(theme === 'light') {
@@ -23,14 +24,19 @@ export default function PokeLayout({children}){
         <div className="flex justify-center">
             <aside className="fixed md:right-0 bg-[#cac5d6] p-1 md:top-8 dark:bg-yellow-900 rounded-md flex md:flex-col bottom-2 md:bottom-auto flex-row justify-evenly">
                 <div className="p-2 hover:my-2 hover:scale-125" title="Home">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 24" stroke-width="1.5" stroke="currentColor" className="dark:text-gray-200 w-8 h-8">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 24" strokeWidth="1.5" stroke="currentColor" className="dark:text-gray-200 w-8 h-8">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
 </svg>
 
                 </div>
+                <div className="p-2 hover:my-2 hover:scale-125" title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" stroke="currentColor" strokeWidth="0.5"  fill= "currentColor" className="dark:text-gray-200 w-6">
+<path d="M 20.5 6 C 12.509634 6 6 12.50964 6 20.5 C 6 28.49036 12.509634 35 20.5 35 C 23.956359 35 27.133709 33.779044 29.628906 31.75 L 39.439453 41.560547 A 1.50015 1.50015 0 1 0 41.560547 39.439453 L 31.75 29.628906 C 33.779044 27.133709 35 23.956357 35 20.5 C 35 12.50964 28.490366 6 20.5 6 z M 20.5 9 C 26.869047 9 32 14.130957 32 20.5 C 32 23.602612 30.776198 26.405717 28.791016 28.470703 A 1.50015 1.50015 0 0 0 28.470703 28.791016 C 26.405717 30.776199 23.602614 32 20.5 32 C 14.130953 32 9 26.869043 9 20.5 C 9 14.130957 14.130953 9 20.5 9 z"></path>
+</svg>
+                </div>
                 <div className="p-2 hover:my-2 hover:scale-125" title="Profile">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 24" stroke-width="1.5" stroke="currentColor" className="dark:text-gray-200 w-8">
-  <path stroke-linecap="round" stroke-line-join="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 24" strokeWidth="1.5" stroke="currentColor" className="dark:text-gray-200 w-8">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
 </svg>
 
                 </div>
