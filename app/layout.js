@@ -9,6 +9,9 @@ export const metadata = {
   title: 'Pokemon Nxt',
   description: 'Pokemon details',
   themeColor: 'black',
+  icons: {
+    icon: 'love.png',
+  }
 }
 
 export default function RootLayout({ children }) {
@@ -20,3 +23,5 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+
+
