@@ -1,6 +1,6 @@
 'use client'
 
-import { ThemeContext } from "../themeproviders";
+import { ThemeContext } from "../context/themeproviders";
 import { usePathname } from 'next/navigation'
 import {  useState } from "react";
 import { cart, home, profile, search } from "@/utils/svg";

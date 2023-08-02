@@ -1,4 +1,4 @@
-import { ThemeContext } from "@/app/themeproviders";
+import { ThemeContext } from "@/app/context/themeproviders";
 import { useContext, useState } from "react";
 
 export const HeartFilled = ({handleWish}) => {

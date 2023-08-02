@@ -1,17 +1,22 @@
-import Image from 'next/image'
-import Link from 'next/link'
+'use client'
+import { useSession, signIn, signOut } from 'next-auth/react'
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Image src='/pokeball-md.png' alt="pokemon logo" width={300} height={500}/>
-      <button>SignIn</button>
-      <button>Signup</button>
-        <Link href='/pokemon'>
-        <button>
-          Home
-          </button>
-          </Link>
-    </main>
-  )
+  const {data} = useSession()
+  console.log('data user', data)
+    if(data) {
+      return (
+      <>
+        Signed in as {data.user.email} <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
+      )
+    } else {
+      return (
+      <>
+      Not signed in <br />
+      <button onClick={() => signIn()}>Sign in</button>
+    </>
+      )
+    }
 }

@@ -1,13 +1,15 @@
 
 import { redirect } from "next/navigation"
-import { options } from "./api/auth/[...nextauth]/options"
+import { options } from "../api/auth/[...nextauth]/options"
 import { getServerSession } from "next-auth"
 import Link from "next/link"
 
 
-export default async function PageApp() {
+export default async function PageServer() {
     const session = await getServerSession(options)
-    console.log('session main', session);
+
+    console.log('session', session);
+
     {session ? redirect('/pokemon') : redirect('/api/auth/signin?callbackUrl=/server')}
     return(
         <div>
