@@ -27,24 +27,24 @@ export default function PokeLayout({children}){
         <div className="flex justify-center">
             <aside className="fixed md:right-0 bg-[#cac5d6] p-1 md:top-8 dark:bg-yellow-900 rounded-md flex md:flex-col bottom-2 md:bottom-auto flex-row justify-evenly">
                 <Link href={'/pokemon'}>
-                <div className="p-2 hover:my-2 hover:scale-125" title="Home">
+                <div className="p-2 transition duration-500 md:hover:my-2 md:hover:scale-110" title="Home">
                 {home}
-                {pathName === '/pokemon' ? <span class="w-1 h-1 bg-[#505085] dark:bg-[#fffff0] absolute rounded-full left-1/2 -translate-x-1/2" /> : null}
+                {pathName === '/pokemon' ? <span class="w-1 h-1 bg-[#505085] dark:bg-[#fffff0] absolute rounded-full translate-x-[10px]" /> : null}
                 </div>
                 </Link>
-                <div className="p-2 hover:my-2 hover:scale-125" title="Search">
+                <div className="p-2 transition duration-500 md:hover:my-2 md:hover:scale-110" title="Search">
                 {search}
                 </div>
                 <Link href={'/pokemon/profile'}>
-                <div className="p-2 hover:my-2 hover:scale-125" title="Profile">
+                <div className="p-2 transition duration-500 md:hover:my-2 md:hover:scale-110" title="Profile">
                 {profile}
-                {pathName === '/pokemon/profile' ? <span class="w-1 h-1 bg-[#505085] dark:bg-[#fffff0] absolute rounded-full left-1/2 -translate-x-1/2" /> : null}
+                {pathName === '/pokemon/profile' ? <span class="w-1 h-1 bg-[#505085] dark:bg-[#fffff0] absolute rounded-full translate-x-[10px]" /> : null}
                 </div>
                 </Link>
             <div
           aria-label="Toggle Dark Mode"
           type="button"
-          className="p-2 h-10 w-10 lg:transform-none md:relative md:left-0 border-0 hover:my-2 hover:scale-125"
+          className="p-2 h-10 transition duration-500 lg:transform-none md:relative md:left-0 border-0 md:hover:my-2 md:hover:scale-110"
           onClick={handleTheme}
         >
             <svg
@@ -53,6 +53,8 @@ export default function PokeLayout({children}){
               fill="currentColor"
               stroke="currentColor"
               className="text-gray-800 dark:text-gray-200"
+              height={30}
+              width={30}
             >
               {theme === 'dark' ? (
                 <path
@@ -73,9 +75,9 @@ export default function PokeLayout({children}){
             
         </div>
         <Link href={'/pokemon/pokedox'}>
-        <div className="p-2 hover:my-2 hover:scale-125" title="Cart">
+        <div className="p-2 transition duration-500 md:hover:my-2 md:hover:scale-110" title="Cart">
                 {cart}
-                {pathName === '/pokemon/pokedox' ? <span class="w-1 h-1 bg-[#505085] dark:bg-[#fffff0] absolute rounded-full left-1/2 -translate-x-1/2" /> : null}
+                {pathName === '/pokemon/pokedox' ? <span class="w-1 h-1 bg-[#505085] dark:bg-[#fffff0] absolute rounded-full translate-x-[10px]" /> : null}
         </div>
         </Link>
         </aside>
