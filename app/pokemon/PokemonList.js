@@ -7,20 +7,23 @@ import { useEffect, useState } from "react";
 
 const PokemonList = () => {
   const [pokemonList, setPokemonList] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
 
   useEffect(() => {
     fetchData("https://pokeapi.co/api/v2/pokemon?limit=20&offset=0");
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scrollend", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scrollend", handleScroll);
   }, []);
 
   const handleScroll = () => {
+    const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
     if (
-      window.innerHeight + document.documentElement.scrollTop >=
-      document.documentElement.offsetHeight
+      (scrollTop + clientHeight >=
+      scrollHeight -200)  
     ) {
+      setIsFetching(true);
       fetchData(sessionStorage.getItem("url"));
     }
   };
@@ -52,10 +55,12 @@ const PokemonList = () => {
     setPokemonList((prev) => {
       return [...prev, ...PokeList];
     });
+    setIsFetching(false);
     sessionStorage.setItem("url", data?.next);
   };
 
   return (
+    <>
     <div className="flex flex-wrap justify-center bg-zinc-100 dark:bg-[#383636]">
       {pokemonList.map((poke, index) => {
         return (
@@ -71,6 +76,7 @@ const PokemonList = () => {
               alt={poke?.name}
               width={300}
               height={400}
+              className="transition duration-500 hover:scale-110"
               
             />
             <p className="text-center capitalize text-[#465b5b] dark:text-yellow-300">
@@ -80,6 +86,8 @@ const PokemonList = () => {
         );
       })}
     </div>
+    {isFetching && <p>Loading ...</p>}
+    </>
   );
 };
 
